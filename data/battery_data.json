@@ -1,0 +1,202 @@
+[
+  {
+    "id": "lithium-chile",
+    "rohstoff": "Lithium",
+    "farbe": "#22d3ee",
+    "abbaugebiet": "Salar de Atacama",
+    "land": "Chile",
+    "region": "Südamerika",
+    "lat": -23.5,
+    "lng": -68.2,
+    "verarbeitung": "Xinyu, Jiangxi",
+    "verarbeitung_land": "China",
+    "verarbeitung_region": "Ostasien",
+    "verarbeitung_lat": 27.81,
+    "verarbeitung_lng": 114.93,
+    "sozial_oeko_impact": "Die Soleförderung in der Atacama verbraucht viel Wasser in einer der trockensten Regionen der Welt. Indigene Atacameño-Gemeinschaften und lokale Ökosysteme geraten unter Druck.",
+    "beschreibung": "Chile ist nach Australien der zweitgrößte Lithiumproduzent der Welt. Im Salar de Atacama wird lithiumhaltige Sole aus dem Untergrund gepumpt und in großen Becken durch Verdunstung konzentriert. Das Verfahren ist vergleichsweise günstig, aber wasserintensiv. Studien und Gerichte haben Konflikte um Wasserrechte und eine Absenkung des Grundwasserspiegels dokumentiert.",
+    "hauptverwendung": "Lithiumcarbonat für NMC-Kathoden und Elektrolyte; ein Teil wird zu Lithiumhydroxid weiterverarbeitet.",
+    "methode": "Brine-Evaporation",
+    "transport": "Lithiumcarbonat → Hafen Antofagasta → China",
+    "weltanteil_abbau": "ca. 20 %",
+    "anteil_abbau_prozent": 20,
+    "weltanteil_verarbeitung": "ca. 70 %",
+    "anteil_verarbeitung_prozent": 70,
+    "verarbeitung_hinweis": "China-Anteil an der globalen Lithiumraffination (2024)",
+    "bewertung": {
+      "oekologie": "hoch",
+      "sozial": "hoch",
+      "oekonomie": "mittel"
+    },
+    "quellen": [
+      {
+        "titel": "USGS Mineral Commodity Summaries 2025 – Lithium",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf"
+      },
+      {
+        "titel": "IEA Global Critical Minerals Outlook 2025",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025"
+      }
+    ]
+  },
+  {
+    "id": "lithium-australien",
+    "rohstoff": "Lithium",
+    "farbe": "#22d3ee",
+    "abbaugebiet": "Greenbushes, Western Australia",
+    "land": "Australien",
+    "region": "Ozeanien",
+    "lat": -33.86,
+    "lng": 116.06,
+    "verarbeitung": "Xinyu, Jiangxi",
+    "verarbeitung_land": "China",
+    "verarbeitung_region": "Ostasien",
+    "verarbeitung_lat": 27.81,
+    "verarbeitung_lng": 114.93,
+    "sozial_oeko_impact": "Der Tagebau verändert Landschaft und Böden; Abraum und Staub müssen langfristig gemanagt werden. Australien liefert den größten Teil des Lithiums, raffiniert es aber kaum selbst.",
+    "beschreibung": "Greenbushes ist eine der größten Lithium-Hartgestein-Minen der Welt. Das Erz (Spodumen) wird vor Ort aufbereitet und fast vollständig nach China exportiert, wo daraus batteriefähige Chemikalien entstehen. Gegenüber der Soleförderung ist der Wasserverbrauch pro Tonne oft geringer, dafür fallen große Mengen Abraum an.",
+    "hauptverwendung": "Spodumen-Konzentrat → Lithiumhydroxid für NMC-Kathoden.",
+    "methode": "Hartgestein / Spodumen-Tagebau",
+    "transport": "Spodumen-Konzentrat → Hafen Perth → China",
+    "weltanteil_abbau": "ca. 37 %",
+    "anteil_abbau_prozent": 37,
+    "weltanteil_verarbeitung": "ca. 70 %",
+    "anteil_verarbeitung_prozent": 70,
+    "verarbeitung_hinweis": "China-Anteil an der globalen Lithiumraffination (2024)",
+    "bewertung": {
+      "oekologie": "mittel",
+      "sozial": "mittel",
+      "oekonomie": "mittel"
+    },
+    "quellen": [
+      {
+        "titel": "USGS Mineral Commodity Summaries 2025 – Lithium",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf"
+      },
+      {
+        "titel": "IEA Global Critical Minerals Outlook 2025",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025"
+      }
+    ]
+  },
+  {
+    "id": "kobalt-kongo",
+    "rohstoff": "Kobalt",
+    "farbe": "#818cf8",
+    "abbaugebiet": "Kolwezi, Lualaba",
+    "land": "Demokratische Republik Kongo",
+    "region": "Afrika",
+    "lat": -10.72,
+    "lng": 25.47,
+    "verarbeitung": "Ganzhou, Jiangxi",
+    "verarbeitung_land": "China",
+    "verarbeitung_region": "Ostasien",
+    "verarbeitung_lat": 25.83,
+    "verarbeitung_lng": 114.93,
+    "sozial_oeko_impact": "Der Kongo liefert rund drei Viertel des weltweit geförderten Kobalts. Neben industriellen Minen prägen handwerkliche Abbaustätten die Region – mit Unfallrisiken, Kinderarbeit und giftigen Stäuben.",
+    "beschreibung": "Kobalt ist meist ein Nebenprodukt von Kupfer- und Nickelabbau. In der Provinz Lualaba liegen große industrielle Minen, aber auch zahlreiche handwerkliche Gruben. Menschen arbeiten dort oft ohne Schutzausrüstung; Kinderarbeit und erzwungene Umsiedlungen sind dokumentiert. Ein großer Teil des Erzes wird nach China verschifft und dort raffiniert.",
+    "hauptverwendung": "Kobaltsulfat für NMC-Kathoden; stabilisiert die Zellstruktur und erhöht die Lebensdauer.",
+    "methode": "Industrieller & artisanaler Kupfer-Kobalt-Abbau",
+    "transport": "Erz/Konzentrat → Durban oder Lobito → China",
+    "weltanteil_abbau": "ca. 76 %",
+    "anteil_abbau_prozent": 76,
+    "weltanteil_verarbeitung": "ca. 75 %",
+    "anteil_verarbeitung_prozent": 75,
+    "verarbeitung_hinweis": "China-Anteil an der globalen Kobaltraffination (2024)",
+    "bewertung": {
+      "oekologie": "hoch",
+      "sozial": "kritisch",
+      "oekonomie": "hoch"
+    },
+    "quellen": [
+      {
+        "titel": "USGS Mineral Commodity Summaries 2025 – Cobalt",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cobalt.pdf"
+      },
+      {
+        "titel": "IEA Global Critical Minerals Outlook 2025",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025"
+      }
+    ]
+  },
+  {
+    "id": "nickel-indonesien",
+    "rohstoff": "Nickel",
+    "farbe": "#f59e0b",
+    "abbaugebiet": "Morowali, Sulawesi",
+    "land": "Indonesien",
+    "region": "Asien",
+    "lat": -2.55,
+    "lng": 122.0,
+    "verarbeitung": "Qinzhou, Guangxi",
+    "verarbeitung_land": "China",
+    "verarbeitung_region": "Ostasien",
+    "verarbeitung_lat": 21.98,
+    "verarbeitung_lng": 108.65,
+    "sozial_oeko_impact": "Nickel aus Laterit-Erz wird oft mit Kohlekraft geschmolzen. Regenwald wird gerodet, Tailings und Abwässer belasten Küsten und Gemeinden; gleichzeitig wächst die Nachfrage nach nickelreichen Akkus.",
+    "beschreibung": "Indonesien ist der größte Nickelproduzent der Welt. Im Morowali Industrial Park verarbeiten chinesische und indonesische Firmen Laterit-Erz zu Nickel-Pig-Iron und Mixed Hydroxide Precipitate (MHP). Der Energiebedarf ist hoch, weil vielerorts Kohlekraftwerke die Schmelzen versorgen. Entwaldung, Abraum und Konflikte um Land sind zentrale Umwelt- und Sozialthemen.",
+    "hauptverwendung": "Nickelsulfat für NMC-Kathoden; daneben wird Nickel für Edelstahl verwendet.",
+    "methode": "Laterit-Tagebau & HPAL/Schmelze",
+    "transport": "MHP/NPI → China → Nickelsulfat",
+    "weltanteil_abbau": "ca. 62 %",
+    "anteil_abbau_prozent": 62,
+    "weltanteil_verarbeitung": "ca. 35 %",
+    "anteil_verarbeitung_prozent": 35,
+    "verarbeitung_hinweis": "China-Anteil an der Nickelraffination; Indonesien verarbeitet selbst ca. 45 % (2024).",
+    "bewertung": {
+      "oekologie": "hoch",
+      "sozial": "hoch",
+      "oekonomie": "mittel"
+    },
+    "quellen": [
+      {
+        "titel": "USGS Mineral Commodity Summaries 2025 – Nickel",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-nickel.pdf"
+      },
+      {
+        "titel": "IEA Global Critical Minerals Outlook 2025",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025"
+      }
+    ]
+  },
+  {
+    "id": "graphit-china",
+    "rohstoff": "Graphit",
+    "farbe": "#a3e635",
+    "abbaugebiet": "Jixi, Heilongjiang",
+    "land": "China",
+    "region": "Asien",
+    "lat": 45.3,
+    "lng": 130.97,
+    "verarbeitung": "Qingdao, Shandong",
+    "verarbeitung_land": "China",
+    "verarbeitung_region": "Ostasien",
+    "verarbeitung_lat": 36.07,
+    "verarbeitung_lng": 120.38,
+    "sozial_oeko_impact": "China dominiert Abbau und Verarbeitung von Batteriegraphit. Staub, Abwässer und der hohe Energiebedarf der Graphitisierung belasten Umwelt und Gesundheit – und machen die Lieferkette verwundbar.",
+    "beschreibung": "Graphit bildet die Anode fast jeder Lithium-Ionen-Zelle. China fördert rund 78 % des Naturgraphits und verarbeitet über 90 % zu kugelförmigem, beschichtetem Batteriegraphit. Die Verarbeitung umfasst Zerkleinern, Kugelformen, Reinigung und Graphitisierung bei sehr hohen Temperaturen. Jixi in Heilongjiang ist ein bekanntes Flockengraphit-Revier.",
+    "hauptverwendung": "Kugelgraphit für Anoden; synthetischer Graphit ist eine Alternative, aber ebenfalls energieintensiv.",
+    "methode": "Flockengraphit-Bergbau & Kugelgraphit-Verarbeitung",
+    "transport": "Flocke → Qingdao → Kugelgraphit → Zellhersteller",
+    "weltanteil_abbau": "ca. 78 %",
+    "anteil_abbau_prozent": 78,
+    "weltanteil_verarbeitung": "ca. 92 %",
+    "anteil_verarbeitung_prozent": 92,
+    "verarbeitung_hinweis": "China-Anteil an der Verarbeitung von Batteriegraphit (2024)",
+    "bewertung": {
+      "oekologie": "hoch",
+      "sozial": "mittel",
+      "oekonomie": "hoch"
+    },
+    "quellen": [
+      {
+        "titel": "USGS Mineral Commodity Summaries 2025 – Graphite",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-graphite.pdf"
+      },
+      {
+        "titel": "IEA Global Critical Minerals Outlook 2025",
+        "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2025"
+      }
+    ]
+  }
+]
