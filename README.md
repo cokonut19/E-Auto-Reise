@@ -48,6 +48,8 @@ Die Globus-Texturen liegen lokal in `assets/`.
 
 ## Funktionen
 
+- **Liniennetzplan** im Hero: schematische Routen von den Minen zur Verarbeitung in China
+- **Zellquerschnitt**, der beim Überfahren der Bestandteile die passende Schicht hervorhebt
 - **3D-Globus** mit Nacht-Textur, Atmosphäre, automatischer Rotation und Orbit-Steuerung
 - **5 Abbaustandorte** in Chile, Australien, der DR Kongo, Indonesien und China
 - **Animierte Lieferbögen** von den Minen zu den Verarbeitungszentren
@@ -56,7 +58,7 @@ Die Globus-Texturen liegen lokal in `assets/`.
 - **Anklickbare Standort-Labels** für eine direkte Auswahl der Lieferkette
 - **Nachhaltigkeits-Check** zu Ökologie, Sozialem und Ökonomie
 - **Quellenbereich** mit USGS- und IEA-Links
-- Responsive Dark-Mode-Design, Tastaturbedienung und Reduced-Motion-Unterstützung
+- Responsives, redaktionelles Dark-Mode-Design (Fraunces, Inter, JetBrains Mono), Tastaturbedienung und Reduced-Motion-Unterstützung
 - Barrierefreie Datentabelle als Alternative zur 3D-Visualisierung
 
 ## Daten

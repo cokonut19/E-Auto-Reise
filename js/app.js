@@ -19,6 +19,17 @@
     Graphit: 'China dominiert sowohl den Abbau als auch die Verarbeitung von Batteriegraphit – die Lieferkette ist besonders stark konzentriert.'
   };
 
+  const SYMBOLS = {
+    Lithium: 'Li',
+    Kobalt: 'Co',
+    Nickel: 'Ni',
+    Graphit: 'C'
+  };
+
+  const symbolFor = (name) => SYMBOLS[name] || String(name || '?').slice(0, 2);
+
+  const LEVEL_BARS = '<i></i><i></i><i></i><i></i>';
+
   const state = {
     materials: [],
     groups: [],
@@ -396,9 +407,9 @@
     if (!dom.materialFilters) return;
 
     dom.materialFilters.innerHTML = [
-      `<button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true"><span class="filter-dot filter-dot--all"></span>Alle</button>`,
+      `<button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true"><span class="filter-sym" aria-hidden="true">∑</span>Alle</button>`,
       ...state.groups.map((group) => (
-        `<button class="filter-btn" type="button" data-filter="${escapeAttr(group.name)}" aria-pressed="false" style="--dot:${group.color}"><span class="filter-dot"></span>${escapeHtml(group.name)}</button>`
+        `<button class="filter-btn" type="button" data-filter="${escapeAttr(group.name)}" aria-pressed="false" style="--dot:${group.color}"><span class="filter-sym" aria-hidden="true">${escapeHtml(symbolFor(group.name))}</span>${escapeHtml(group.name)}</button>`
       ))
     ].join('');
   }
@@ -442,7 +453,7 @@
         <div class="overview-list">
           ${state.groups.map((group) => `
             <button class="overview-item" type="button" data-group="${escapeAttr(group.name)}" style="--dot:${group.color}">
-              <span class="overview-dot" aria-hidden="true"></span>
+              <span class="overview-dot" aria-hidden="true">${escapeHtml(symbolFor(group.name))}</span>
               <span class="overview-copy">
                 <strong>${escapeHtml(group.name)}</strong>
                 <small>${group.items.map((item) => escapeHtml(item.land)).join(' · ')}</small>
@@ -504,7 +515,7 @@
     const badges = ratings.map(([key, label]) => {
       const value = material.bewertung?.[key];
       if (!value) return '';
-      return `<span class="level level--${levelClass(value)}">${label}: ${escapeHtml(value)}</span>`;
+      return `<span class="level level--${levelClass(value)}">${LEVEL_BARS}${label}: ${escapeHtml(value)}</span>`;
     }).join('');
 
     const sourceLinks = material.quellen
@@ -829,7 +840,7 @@
       .globeImageUrl('assets/earth-night.jpg')
       .bumpImageUrl('assets/earth-topology.png')
       .showAtmosphere(true)
-      .atmosphereColor('#38bdf8')
+      .atmosphereColor('#7dd3fc')
       .atmosphereAltitude(0.2)
       .pointsMerge(false)
       .pointAltitude((point) => point.altitude)
