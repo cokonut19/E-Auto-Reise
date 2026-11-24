@@ -61,7 +61,8 @@ Die Globus-Texturen liegen lokal in `assets/`.
 - **Nachhaltigkeits-Check** zu Ökologie, Sozialem und Ökonomie
 - **Recycling-Seite** mit Kreislauf-Grafik, Kennzahlen (Second Life, Schwarzmasse, Kapazitäten) und den EU-Quoten der Batterieverordnung
 - **Quellenseite** mit USGS-, IEA-, EU- und OECD-Links sowie eigenem Block für die Recycling-Quellen (EU, UBA, Fraunhofer ISI/FFB, JRC, IEA)
-- Dark-Mode-Design, Tastaturbedienung, Reduced-Motion-Unterstützung und barrierefreie Datentabelle
+- **Hell- und Dunkelmodus**: folgt automatisch der Systemeinstellung, Umschalter (Sonne/Mond) oben rechts speichert die Wahl; der Globus bleibt in beiden Modi auf dunklem Hintergrund
+- Tastaturbedienung, Reduced-Motion-Unterstützung und barrierefreie Datentabelle
 - Alte Links wie `index.html#quellen` leiten automatisch auf die neue Seite weiter
 
 ## Daten

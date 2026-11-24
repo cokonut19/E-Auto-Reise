@@ -220,6 +220,51 @@
     return false;
   }
 
+  // Light / dark theme: follows the system until the visitor picks one in the header.
+  const THEME_COLORS = { dark: '#0a0d12', light: '#f6f5f2' };
+
+  function currentTheme() {
+    const explicit = document.documentElement.getAttribute('data-theme');
+    if (explicit === 'light' || explicit === 'dark') return explicit;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function updateThemeUi() {
+    const theme = currentTheme();
+    const label = theme === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln';
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    });
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      meta.setAttribute('content', THEME_COLORS[theme]);
+    });
+  }
+
+  function setupThemeToggle() {
+    const buttons = document.querySelectorAll('[data-theme-toggle]');
+    if (!buttons.length) return;
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try {
+          window.localStorage.setItem('theme', next);
+        } catch (error) {
+          // Storage can be unavailable (private mode); the toggle still works for this page.
+        }
+        updateThemeUi();
+      });
+    });
+
+    const media = window.matchMedia('(prefers-color-scheme: light)');
+    if (typeof media.addEventListener === 'function') {
+      media.addEventListener('change', updateThemeUi);
+    }
+    updateThemeUi();
+  }
+
   // Arrow keys step through the tour (useful when presenting).
   function setupPager() {
     const prev = document.querySelector('[data-pager="prev"]');
@@ -1042,6 +1087,7 @@
   async function init() {
     cacheDom();
     if (redirectLegacyHash()) return;
+    setupThemeToggle();
     setupReveal();
     setupPager();
 

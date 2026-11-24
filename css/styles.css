@@ -1,9 +1,10 @@
 /* =========================================================
    E-Auto-Reise – Design system & layout
-   Editorial dark theme · transit-map motif · mobile-first
+   Dark & light theme · transit-map motif · mobile-first
    ========================================================= */
 
 :root {
+  color-scheme: dark;
   --bg: #0a0d12;
   --bg-2: #0e1219;
   --surface: #121720;
@@ -17,12 +18,16 @@
   --li: #22d3ee;
   --co: #818cf8;
   --ni: #f59e0b;
-  --c: #a3e635;
+  --gr: #a3e635;
 
   --lvl-low: #a3e635;
   --lvl-medium: #e8c46a;
   --lvl-high: #f59e0b;
   --lvl-critical: #fb7185;
+
+  --frame: #e8b86a;
+  --header-bg: rgba(10, 13, 18, 0.86);
+  --tabbar-bg: rgba(10, 13, 18, 0.94);
 
   --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -170,7 +175,7 @@ h3 {
 .button svg { width: 18px; height: 18px; transition: transform 0.2s var(--ease); }
 
 .button--primary { background: var(--text); color: var(--bg); }
-.button--primary:hover { background: #fff; transform: translateY(-1px); }
+.button--primary:hover { background: color-mix(in srgb, var(--text) 85%, var(--bg)); transform: translateY(-1px); }
 .button--primary:hover svg { transform: translateX(3px); }
 
 .button--ghost { border-color: var(--line-strong); color: var(--text); }
@@ -186,7 +191,7 @@ h3 {
   z-index: 100;
   height: var(--header-h);
   border-bottom: 1px solid var(--line);
-  background: rgba(10, 13, 18, 0.86);
+  background: var(--header-bg);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
@@ -258,7 +263,7 @@ h3 {
   gap: 0.2rem;
   padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom));
   border-top: 1px solid var(--line-strong);
-  background: rgba(10, 13, 18, 0.94);
+  background: var(--tabbar-bg);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
 }
@@ -579,7 +584,7 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
 
 .layer { transition: opacity 0.3s ease; }
 
-.layer-frame { fill: none; stroke: #e8b86a; stroke-width: 3; }
+.layer-frame { fill: none; stroke: var(--frame); stroke-width: 3; }
 
 .layer-edge { fill: none; stroke-width: 1.6; }
 
@@ -589,7 +594,7 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   font-size: 12px;
 }
 
-.layer-label { fill: #e8b86a; }
+.layer-label { fill: var(--frame); }
 
 .layer-tag { fill: var(--text); }
 
@@ -928,7 +933,7 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   font-weight: 500;
 }
 
-.filter-btn[data-filter="all"] .filter-sym { color: var(--text); background: rgba(236, 232, 223, 0.08); }
+.filter-btn[data-filter="all"] .filter-sym { color: var(--text); background: var(--surface-2); }
 
 .filter-btn.is-active .filter-sym { background: var(--dot); color: var(--bg); }
 
@@ -945,8 +950,8 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--c);
-  box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.14);
+  background: var(--gr);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gr) 18%, transparent);
 }
 
 .globe-status[data-state="loading"] .status-dot { background: var(--lvl-medium); animation: pulse 1.2s ease-in-out infinite; box-shadow: 0 0 0 4px rgba(232, 196, 106, 0.14); }
@@ -1433,7 +1438,7 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   width: 5px;
   height: 12px;
   border-radius: 2px;
-  background: rgba(236, 232, 223, 0.12);
+  background: var(--line-strong);
 }
 
 .level i:nth-child(4) { margin-right: 0.35rem; }
@@ -1762,8 +1767,8 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   color: var(--bg);
 }
 
-.pager-link--next span { color: rgba(10, 13, 18, 0.6); }
-.pager-link--next:hover { border-color: transparent; background: #fff; transform: translateX(3px); }
+.pager-link--next span { color: color-mix(in srgb, var(--bg) 65%, transparent); }
+.pager-link--next:hover { border-color: transparent; background: color-mix(in srgb, var(--text) 85%, var(--bg)); transform: translateX(3px); }
 
 .pager-count {
   display: grid;
@@ -1809,6 +1814,145 @@ body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   border-radius: var(--radius-sm);
   background: var(--surface);
   font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   Light theme
+   Follows the system setting; the header toggle stores an
+   explicit choice in data-theme on <html>.
+   ========================================================= */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f5f2;
+  --bg-2: #ffffff;
+  --surface: #f0eee9;
+  --surface-2: #e7e4dd;
+  --line: rgba(22, 25, 30, 0.1);
+  --line-strong: rgba(22, 25, 30, 0.2);
+  --text: #16191e;
+  --muted: #50555d;
+  --dim: #767b83;
+
+  --li: #0891b2;
+  --co: #4f46e5;
+  --ni: #d97706;
+  --gr: #65a30d;
+
+  --lvl-low: #65a30d;
+  --lvl-medium: #b7791f;
+  --lvl-high: #ea580c;
+  --lvl-critical: #e11d48;
+
+  --frame: #b7791f;
+  --header-bg: rgba(246, 245, 242, 0.88);
+  --tabbar-bg: rgba(255, 255, 255, 0.94);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f6f5f2;
+    --bg-2: #ffffff;
+    --surface: #f0eee9;
+    --surface-2: #e7e4dd;
+    --line: rgba(22, 25, 30, 0.1);
+    --line-strong: rgba(22, 25, 30, 0.2);
+    --text: #16191e;
+    --muted: #50555d;
+    --dim: #767b83;
+
+    --li: #0891b2;
+    --co: #4f46e5;
+    --ni: #d97706;
+    --gr: #65a30d;
+
+    --lvl-low: #65a30d;
+    --lvl-medium: #b7791f;
+    --lvl-high: #ea580c;
+    --lvl-critical: #e11d48;
+
+    --frame: #b7791f;
+    --header-bg: rgba(246, 245, 242, 0.88);
+    --tabbar-bg: rgba(255, 255, 255, 0.94);
+  }
+}
+
+/* The globe stays on a dark "space" stage in both themes */
+.globe-stage,
+.globe-tooltip {
+  --bg: #0a0d12;
+  --bg-2: #0e1219;
+  --surface: #121720;
+  --surface-2: #171d28;
+  --line: rgba(236, 232, 223, 0.09);
+  --line-strong: rgba(236, 232, 223, 0.18);
+  --text: #ece8df;
+  --muted: #a3a6ab;
+  --dim: #71757d;
+  color: var(--text);
+}
+
+/* Colours written into SVG attributes / inline styles follow the theme tokens */
+[stroke="#22d3ee"] { stroke: var(--li); }
+[stroke="#818cf8"] { stroke: var(--co); }
+[stroke="#f59e0b"] { stroke: var(--ni); }
+[stroke="#a3e635"] { stroke: var(--gr); }
+[stroke="#ece8df"] { stroke: var(--text); }
+[fill="#22d3ee"] { fill: var(--li); }
+[fill="#818cf8"] { fill: var(--co); }
+[fill="#f59e0b"] { fill: var(--ni); }
+[fill="#a3e635"] { fill: var(--gr); }
+[fill="#ece8df"] { fill: var(--text); }
+[fill="#0a0d12"] { fill: var(--bg); }
+
+[style*="--c:#22d3ee"] { --c: var(--li) !important; }
+[style*="--c:#818cf8"] { --c: var(--co) !important; }
+[style*="--c:#f59e0b"] { --c: var(--ni) !important; }
+[style*="--c:#a3e635"] { --c: var(--gr) !important; }
+[style*="--c:#e8b86a"] { --c: var(--frame) !important; }
+[style*="--c:#fb7185"] { --c: var(--lvl-critical) !important; }
+
+[style*="--dot:#22d3ee"] { --dot: var(--li) !important; }
+[style*="--dot:#818cf8"] { --dot: var(--co) !important; }
+[style*="--dot:#f59e0b"] { --dot: var(--ni) !important; }
+[style*="--dot:#a3e635"] { --dot: var(--gr) !important; }
+
+[style*="color:#22d3ee"]:not([style*="-color"]) { color: var(--li) !important; }
+[style*="color:#818cf8"]:not([style*="-color"]) { color: var(--co) !important; }
+[style*="color:#f59e0b"]:not([style*="-color"]) { color: var(--ni) !important; }
+[style*="color:#a3e635"]:not([style*="-color"]) { color: var(--gr) !important; }
+
+/* ---------- Theme toggle ---------- */
+
+.header-tools { display: flex; align-items: center; gap: 0.75rem; }
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover { color: var(--text); border-color: var(--text); }
+
+.theme-toggle svg { width: 18px; height: 18px; }
+
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
+  :root:not([data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
 }
 
 /* =========================================================
