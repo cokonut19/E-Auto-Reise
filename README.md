@@ -22,20 +22,22 @@ Danach im Browser öffnen: **http://localhost:5500**
 
 ## Projektstruktur
 
+Die Website besteht aus vier Seiten, die man der Reihe nach durchklicken kann
+(Weiter-Button oder Pfeiltasten ← →, z. B. für eine Präsentation):
+
 ```
 /
-├── index.html                  # Semantische Seitenstruktur
+├── index.html                  # 1 · Start: 3D-Globus + Liniennetz der Rohstoffe
+├── akku.html                   # 2 · Bestandteile der Batterie
+├── nachhaltigkeit.html         # 3 · Nachhaltigkeits-Check
+├── quellen.html                # 4 · Quellen & Methodik
 ├── css/
 │   └── styles.css              # Designsystem, Layout, Responsive & Animationen
 ├── js/
-│   └── app.js                  # Globe.gl, Daten laden, Filter, Panels
+│   └── app.js                  # Globus, Daten laden, Filter, Panels, Rundgang
 ├── data/
 │   └── battery_data.json       # Rohstoff-, Lieferketten- und Quellendaten
-├── assets/
-│   ├── earth-night.jpg         # Globus-Textur (three-globe Beispiel)
-│   ├── earth-topology.png      # Höhen-/Bump-Textur
-│   ├── night-sky.png           # Sternenhimmel
-│   └── favicon.svg
+├── assets/                     # Globus-Texturen, Sternenhimmel, Favicon
 ├── vendor/
 │   └── globe.gl.min.js         # Lokaler Fallback, falls das CDN nicht erreichbar ist
 ├── AGENTS.md                   # Projektauftrag
@@ -48,18 +50,17 @@ Die Globus-Texturen liegen lokal in `assets/`.
 
 ## Funktionen
 
-- **Liniennetzplan** im Hero: schematische Routen von den Minen zur Verarbeitung in China
+- **4 Seiten statt einer langen Scroll-Seite**: Desktop-Navigation oben, auf dem Handy eine Tab-Leiste unten
+- **Rundgang** mit Zurück/Weiter-Buttons und Pfeiltasten-Steuerung
+- **Wenig Text**: Kernaussage + Zahl sichtbar, Details über „Mehr erfahren“ aufklappbar
+- **3D-Globus** mit Nacht-Textur, animierten Lieferbögen, Filter nach Lithium, Kobalt, Nickel und Graphit
+- **Detail-Panel** pro Abbaustandort mit Route, Weltanteil, Bewertung und Quellen
+- **Liniennetzplan** der Routen von den Minen zur Verarbeitung in China
 - **Zellquerschnitt**, der beim Überfahren der Bestandteile die passende Schicht hervorhebt
-- **3D-Globus** mit Nacht-Textur, Atmosphäre, automatischer Rotation und Orbit-Steuerung
-- **5 Abbaustandorte** in Chile, Australien, der DR Kongo, Indonesien und China
-- **Animierte Lieferbögen** von den Minen zu den Verarbeitungszentren
-- **Filter** nach Lithium, Kobalt, Nickel und Graphit
-- **Interaktive Punkte** mit Tooltip und Detail-Panel (Klick)
-- **Anklickbare Standort-Labels** für eine direkte Auswahl der Lieferkette
 - **Nachhaltigkeits-Check** zu Ökologie, Sozialem und Ökonomie
-- **Quellenbereich** mit USGS- und IEA-Links
-- Responsives, redaktionelles Dark-Mode-Design (Fraunces, Inter, JetBrains Mono), Tastaturbedienung und Reduced-Motion-Unterstützung
-- Barrierefreie Datentabelle als Alternative zur 3D-Visualisierung
+- **Quellenseite** mit USGS-, IEA-, EU- und OECD-Links
+- Dark-Mode-Design, Tastaturbedienung, Reduced-Motion-Unterstützung und barrierefreie Datentabelle
+- Alte Links wie `index.html#quellen` leiten automatisch auf die neue Seite weiter
 
 ## Daten
 

@@ -183,9 +183,6 @@
   }
 
   function cacheDom() {
-    dom.header = document.querySelector('.site-header');
-    dom.navToggle = document.querySelector('#navToggle');
-    dom.siteNav = document.querySelector('#siteNav');
     dom.materialFilters = document.querySelector('#materialFilters');
     dom.globeStage = document.querySelector('#globeStage');
     dom.globeViz = document.querySelector('#globeViz');
@@ -207,49 +204,40 @@
     dom.globeStatusText.textContent = text;
   }
 
-  function setupHeader() {
-    if (!dom.header) return;
-    const updateHeader = () => dom.header.classList.toggle('is-scrolled', window.scrollY > 8);
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
-  }
+  const LEGACY_HASHES = {
+    '#bestandteile': 'akku.html',
+    '#nachhaltigkeit': 'nachhaltigkeit.html',
+    '#quellen': 'quellen.html'
+  };
 
-  function closeNav() {
-    document.body.classList.remove('nav-open');
-    if (dom.navToggle) {
-      dom.navToggle.setAttribute('aria-expanded', 'false');
-      dom.navToggle.setAttribute('aria-label', 'Menü öffnen');
+  // Old one-page links (index.html#quellen …) now point to separate pages.
+  function redirectLegacyHash() {
+    const target = LEGACY_HASHES[window.location.hash];
+    if (target && dom.globeViz) {
+      window.location.replace(target);
+      return true;
     }
+    return false;
   }
 
-  function openNav() {
-    document.body.classList.add('nav-open');
-    if (dom.navToggle) {
-      dom.navToggle.setAttribute('aria-expanded', 'true');
-      dom.navToggle.setAttribute('aria-label', 'Menü schließen');
-    }
-  }
-
-  function setupNavigation() {
-    if (!dom.navToggle) return;
-
-    dom.navToggle.addEventListener('click', () => {
-      if (document.body.classList.contains('nav-open')) closeNav();
-      else openNav();
-    });
-
-    document.querySelectorAll('.site-nav a').forEach((link) => {
-      link.addEventListener('click', closeNav);
-    });
+  // Arrow keys step through the tour (useful when presenting).
+  function setupPager() {
+    const prev = document.querySelector('[data-pager="prev"]');
+    const next = document.querySelector('[data-pager="next"]');
+    if (!prev && !next) return;
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeNav();
-    });
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const target = event.target;
+      if (target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
 
-    document.addEventListener('click', (event) => {
-      if (!document.body.classList.contains('nav-open')) return;
-      if (event.target.closest('#siteNav') || event.target.closest('#navToggle')) return;
-      closeNav();
+      if (event.key === 'ArrowRight' && next) {
+        event.preventDefault();
+        window.location.href = next.href;
+      } else if (event.key === 'ArrowLeft' && prev) {
+        event.preventDefault();
+        window.location.href = prev.href;
+      }
     });
   }
 
@@ -446,10 +434,7 @@
       <div class="panel-content">
         <p class="panel-kicker">Lieferketten im Überblick</p>
         <h3 class="panel-title">Fünf Abbaustandorte. Ein Verarbeitungs-Schwerpunkt.</h3>
-        <p class="panel-lead">
-          Wähle einen Rohstoff oder klicke direkt auf einen Punkt im Globus.
-          Hier erscheinen Herkunft, Verarbeitungsweg und die wichtigsten Auswirkungen.
-        </p>
+        <p class="panel-lead">Wähle einen Rohstoff oder tippe auf einen Punkt im Globus.</p>
         <div class="overview-list">
           ${state.groups.map((group) => `
             <button class="overview-item" type="button" data-group="${escapeAttr(group.name)}" style="--dot:${group.color}">
@@ -498,7 +483,7 @@
             </button>
           `).join('')}
         </div>
-        <p class="panel-note">Klicke auf einen Standort oder direkt auf den Globus, um die Route und die Auswirkungen zu sehen.</p>
+        <p class="panel-note">Tippe auf einen Standort für Route und Auswirkungen.</p>
       </div>
     `;
   }
@@ -584,17 +569,20 @@
         </div>
         <p class="panel-note">${escapeHtml(material.verarbeitung_hinweis || '')}</p>
 
-        <div class="detail-block">
-          <h4>Was bedeutet das?</h4>
-          <p>${escapeHtml(material.beschreibung || material.sozial_oeko_impact)}</p>
-        </div>
-        <div class="detail-block">
-          <h4>Im Akku</h4>
-          <p>${escapeHtml(material.hauptverwendung || 'Bestandteil der Lithium-Ionen-Zelle.')}</p>
-        </div>
-
         <div class="badge-row">${badges}</div>
-        <div class="panel-tags">${tags}</div>
+
+        <details class="more">
+          <summary>Mehr erfahren</summary>
+          <div class="detail-block">
+            <h4>Was bedeutet das?</h4>
+            <p>${escapeHtml(material.beschreibung || material.sozial_oeko_impact)}</p>
+          </div>
+          <div class="detail-block">
+            <h4>Im Akku</h4>
+            <p>${escapeHtml(material.hauptverwendung || 'Bestandteil der Lithium-Ionen-Zelle.')}</p>
+          </div>
+          <div class="panel-tags">${tags}</div>
+        </details>
 
         <div class="panel-sources">
           <span>Quellen</span>
@@ -1053,12 +1041,16 @@
 
   async function init() {
     cacheDom();
-    setupHeader();
-    setupNavigation();
+    if (redirectLegacyHash()) return;
     setupReveal();
-    setupInteractions();
+    setupPager();
 
     if (dom.year) dom.year.textContent = String(new Date().getFullYear());
+
+    // Everything below only applies to the start page with the globe.
+    if (!dom.globeViz) return;
+
+    setupInteractions();
     setStatus('Daten werden geladen …', 'loading');
 
     try {
