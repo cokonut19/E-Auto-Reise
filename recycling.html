@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Batterie-Recycling: Second Life, Schwarzmasse, EU-Recyclingquoten und Batteriepass – belegt mit Primärquellen.">
+  <meta name="theme-color" content="#0a0d12">
+  <meta name="color-scheme" content="dark">
+  <title>Batterie-Recycling – E-Auto-Reise</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="4">
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="E-Auto-Reise – zur Startseite">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M4 10h9l6 6h9" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 22h9l6-6" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="4" cy="10" r="2.6" fill="#0a0d12" stroke="#ece8df" stroke-width="1.6"/>
+            <circle cx="4" cy="22" r="2.6" fill="#0a0d12" stroke="#ece8df" stroke-width="1.6"/>
+            <rect x="24" y="12" width="6" height="8" rx="2" fill="#ece8df"/>
+          </svg>
+        </span>
+        <span class="brand-text">E-Auto-Reise</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="index.html"><span class="nav-num">01</span>Globus</a>
+        <a href="akku.html"><span class="nav-num">02</span>Akku</a>
+        <a href="nachhaltigkeit.html"><span class="nav-num">03</span>Nachhaltigkeit</a>
+        <a href="recycling.html" aria-current="page"><span class="nav-num">04</span>Recycling</a>
+        <a href="quellen.html"><span class="nav-num">05</span>Quellen</a>
+      </nav>
+
+      <span class="header-progress" aria-hidden="true">4 / 5</span>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-section" aria-labelledby="recycling-title">
+      <div class="wrap">
+        <header class="page-head" data-reveal>
+          <p class="section-index"><span>04</span> Recycling</p>
+          <h1 id="recycling-title">Der Kreis <em>schließt sich</em>.</h1>
+          <p class="section-lead">Aus alten Akkus werden neue Rohstoffe – wenn Weiternutzung, Technik und Regeln zusammenspielen.</p>
+        </header>
+
+        <div class="components-layout recycle-layout">
+          <figure class="cell-figure cycle-figure" data-reveal>
+            <svg class="cycle-svg" viewBox="0 0 440 430" role="img" aria-labelledby="cycleTitle cycleDesc">
+              <title id="cycleTitle">Kreislauf einer E-Auto-Batterie</title>
+              <desc id="cycleDesc">Neue Rohstoffe aus dem Abbau gehen in die Zelle. Die Batterie fährt im Auto, wird danach als stationärer Speicher weitergenutzt, anschließend recycelt. Das Rezyklat mit Lithium, Nickel und Kobalt fließt zurück in neue Zellen.</desc>
+              <defs>
+                <path id="cycle-loop" d="M220 70 A150 150 0 1 1 219.9 70"/>
+                <marker id="cyArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+                </marker>
+              </defs>
+
+              <circle cx="220" cy="220" r="150" class="cy-track"/>
+              <g class="cy-arcs" fill="none" stroke-width="7" stroke-linecap="round">
+                <path d="M248 72.6 A150 150 0 0 1 345.4 137.2" stroke="#ece8df" style="--d:.1s"/>
+                <path d="M371.2 202.6 A150 150 0 0 1 331.7 320.7" stroke="#22d3ee" style="--d:.3s"/>
+                <path d="M281.4 357 A150 150 0 0 1 158.6 357" stroke="#a3e635" style="--d:.5s"/>
+                <path d="M108.3 320.7 A150 150 0 0 1 68.8 202.6" stroke="#f59e0b" style="--d:.7s"/>
+                <path d="M94.6 137.2 A150 150 0 0 1 192 72.6" stroke="#818cf8" style="--d:.9s"/>
+              </g>
+
+              <g class="cy-traveller" aria-hidden="true">
+                <circle r="5"><animateMotion dur="12s" repeatCount="indefinite" rotate="auto"><mpath href="#cycle-loop"/></animateMotion></circle>
+              </g>
+
+              <!-- Abbau: neue Rohstoffe kommen von außen dazu -->
+              <path d="M24 70 H182" class="cy-feed" marker-end="url(#cyArrow)"/>
+              <text x="24" y="54" class="cy-small">Rohstoffe aus Abbau</text>
+
+              <g class="cy-nodes">
+                <circle cx="220" cy="70" r="26" stroke="#ece8df"/>
+                <circle cx="362.7" cy="173.6" r="26" stroke="#22d3ee"/>
+                <circle cx="308.2" cy="341.4" r="26" stroke="#a3e635"/>
+                <circle cx="131.8" cy="341.4" r="26" stroke="#f59e0b"/>
+                <circle cx="77.3" cy="173.6" r="26" stroke="#818cf8"/>
+              </g>
+              <g class="cy-num" text-anchor="middle">
+                <text x="220" y="75">1</text>
+                <text x="362.7" y="178.6">2</text>
+                <text x="308.2" y="346.4">3</text>
+                <text x="131.8" y="346.4">4</text>
+                <text x="77.3" y="178.6">5</text>
+              </g>
+              <g class="cy-labels" text-anchor="middle">
+                <text x="220" y="28">Zelle</text>
+                <text x="382" y="104">Auto</text>
+                <text x="382" y="120" class="cy-small">1. Leben</text>
+                <text x="308.2" y="394">Second Life</text>
+                <text x="308.2" y="410" class="cy-small">Stromspeicher</text>
+                <text x="131.8" y="394">Recycling</text>
+                <text x="131.8" y="410" class="cy-small">Schwarzmasse</text>
+                <text x="50" y="100">Rezyklat</text>
+                <text x="50" y="116" class="cy-small">Li · Ni · Co</text>
+              </g>
+
+              <text x="220" y="214" text-anchor="middle" class="cy-center">Kreislauf</text>
+              <text x="220" y="238" text-anchor="middle" class="cy-small">statt Einbahnstraße</text>
+            </svg>
+            <figcaption>Schematischer Kreislauf einer E-Auto-Batterie</figcaption>
+          </figure>
+
+          <ul class="component-grid">
+          <li class="component fact" style="--c:#a3e635" data-reveal>
+            <div class="component-top"><span class="component-num">01</span><span class="component-chem">Second Life</span></div>
+            <p class="fact-number">70–80 %</p>
+            <p class="component-share">Restkapazität</p>
+            <p class="component-short">Dann gilt ein Akku meist als zu schwach fürs Auto – als Stromspeicher kann er weiterarbeiten.</p>
+            <details class="more">
+              <summary>Mehr erfahren</summary>
+              <p>Eine Studie der Uni Münster, der Fraunhofer FFB und des Berkeley Lab (Fallstudie Kalifornien) zeigt: Akkus erst als stationäre Speicher weiterzunutzen und dann zu recyceln, spart bis 2050 mehr CO₂ (rund 56 statt 48 Mio. Tonnen) als sofortiges Recycling.</p>
+            </details>
+          </li>
+          <li class="component fact" style="--c:#f59e0b" data-reveal>
+            <div class="component-top"><span class="component-num">02</span><span class="component-chem">Schwarzmasse</span></div>
+            <p class="fact-number">≈ 400 kg</p>
+            <p class="component-share">pro Tonne Altbatterien</p>
+            <p class="component-short">Deaktiviert, zerlegt und geschreddert wird der Akku zu „Schwarzmasse“.</p>
+            <details class="more">
+              <summary>Mehr erfahren</summary>
+              <p>Daraus werden in der Raffination Lithium, Nickel, Kobalt, Mangan und Graphit zurückgewonnen – per Hydrometallurgie (in Europa das Kernverfahren) oder Pyrometallurgie. Graphit wird im herkömmlichen Verfahren meist verbrannt.</p>
+            </details>
+          </li>
+          <li class="component fact" style="--c:#818cf8" data-reveal>
+            <div class="component-top"><span class="component-num">03</span><span class="component-chem">Weniger Bergbau</span></div>
+            <p class="fact-number">25–40 %</p>
+            <p class="component-share">weniger neue Minen bis 2050</p>
+            <p class="component-short">So stark könnte mehr Recycling das Wachstum des Bergbaus bremsen.</p>
+            <details class="more">
+              <summary>Mehr erfahren</summary>
+              <p>Je nach Rohstoff rund 40 % bei Kupfer und Kobalt und rund 25 % bei Lithium und Nickel (IEA, Szenario mit den angekündigten Klimazusagen der Staaten).</p>
+            </details>
+          </li>
+          <li class="component fact" style="--c:#22d3ee" data-reveal>
+            <div class="component-top"><span class="component-num">04</span><span class="component-chem">Kapazität</span></div>
+            <p class="fact-number">&gt; 400.000 t</p>
+            <p class="component-share">Recyclingkapazität in Europa bis 2026</p>
+            <p class="component-short">Mehr als an Altakkus zurückkommt: heute rund 100.000 t pro Jahr, bis 2030 bis zu 270.000 t.</p>
+            <details class="more">
+              <summary>Mehr erfahren</summary>
+              <p>Weltweit stehen die meisten Recyclinganlagen für Lithiumbatterien in Ostasien, vor allem in China. Europa exportiert derzeit unterm Strich sogar Schwarzmasse.</p>
+            </details>
+          </li>
+          </ul>
+        </div>
+
+        <section class="rules" aria-labelledby="rules-title" data-reveal>
+          <div class="rules-head">
+            <p class="section-index">EU-Batterieverordnung 2023/1542</p>
+            <h2 id="rules-title">Die Regeln <em>werden strenger</em>.</h2>
+          </div>
+
+          <div class="rules-grid">
+            <article class="rule-card">
+              <h3>Rückgewinnung aus Altbatterien</h3>
+              <p class="rule-sub">Mindestanteil, der zurückgewonnen werden muss</p>
+              <div class="quota" style="--c:#22d3ee">
+                <div class="quota-head"><span>Lithium</span><strong>50 % → 80 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Lithium: 50 % bis Ende 2027, 80 % bis Ende 2031">
+                  <span class="quota-fill quota-fill--later" style="width:80%"></span>
+                  <span class="quota-fill" style="width:50%"></span>
+                </div>
+              </div>
+              <div class="quota" style="--c:#818cf8">
+                <div class="quota-head"><span>Kobalt</span><strong>90 % → 95 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Kobalt: 90 % bis Ende 2027, 95 % bis Ende 2031">
+                  <span class="quota-fill quota-fill--later" style="width:95%"></span>
+                  <span class="quota-fill" style="width:90%"></span>
+                </div>
+              </div>
+              <div class="quota" style="--c:#f59e0b">
+                <div class="quota-head"><span>Nickel</span><strong>90 % → 95 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Nickel: 90 % bis Ende 2027, 95 % bis Ende 2031">
+                  <span class="quota-fill quota-fill--later" style="width:95%"></span>
+                  <span class="quota-fill" style="width:90%"></span>
+                </div>
+              </div>
+              <p class="quota-legend"><span class="key key--now"></span>bis Ende 2027 <span class="key key--later"></span>bis Ende 2031</p>
+            </article>
+
+            <article class="rule-card">
+              <h3>Recyclingmaterial in neuen E-Auto-Akkus</h3>
+              <p class="rule-sub">Pflichtanteil an Rezyklat</p>
+              <div class="quota" style="--c:#818cf8">
+                <div class="quota-head"><span>Kobalt</span><strong>16 % → 26 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Kobalt: 16 % ab August 2031, 26 % ab August 2036">
+                  <span class="quota-fill quota-fill--later" style="width:26%"></span>
+                  <span class="quota-fill" style="width:16%"></span>
+                </div>
+              </div>
+              <div class="quota" style="--c:#22d3ee">
+                <div class="quota-head"><span>Lithium</span><strong>6 % → 12 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Lithium: 6 % ab August 2031, 12 % ab August 2036">
+                  <span class="quota-fill quota-fill--later" style="width:12%"></span>
+                  <span class="quota-fill" style="width:6%"></span>
+                </div>
+              </div>
+              <div class="quota" style="--c:#f59e0b">
+                <div class="quota-head"><span>Nickel</span><strong>6 % → 15 %</strong></div>
+                <div class="quota-track" role="img" aria-label="Nickel: 6 % ab August 2031, 15 % ab August 2036">
+                  <span class="quota-fill quota-fill--later" style="width:15%"></span>
+                  <span class="quota-fill" style="width:6%"></span>
+                </div>
+              </div>
+              <p class="quota-legend"><span class="key key--now"></span>ab August 2031 <span class="key key--later"></span>ab August 2036</p>
+            </article>
+
+            <article class="rule-card rule-card--passport">
+              <span class="passport-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>
+              </span>
+              <p class="passport-date">ab 18.02.2027</p>
+              <h3>Digitaler Batteriepass</h3>
+              <p class="rule-sub">Jede neue E-Auto-Batterie bekommt eine elektronische Akte, abrufbar per QR-Code – wichtig auch für Recyclingbetriebe.</p>
+            </article>
+          </div>
+
+          <details class="note catch">
+            <summary><strong>Der Haken</strong> Die meisten E-Auto-Akkus sind noch lange im Einsatz.</summary>
+            <p>
+              Nur mit Altbatterien aus europäischen Autos käme 2030 erst rund 3 % Lithium-Rezyklat zusammen –
+              gefordert sind ab 2031 6 %. Erst nach 2035 kommen große Mengen Altfahrzeuge ins Recycling; 2040
+              wären es rund 20 %. Bis dahin muss Rezyklat auch aus anderen Quellen kommen. Trotzdem gilt:
+              Eine lange Lebensdauer der Batterie ist aus Umweltsicht besser, auch wenn sie das Rezyklat verzögert.
+              Die EU-Kommission hat die Recyclingziele 2026 überprüft und hält sie weiterhin für angemessen.
+            </p>
+          </details>
+        </section>
+      </div>
+    </section>
+
+    <nav class="pager wrap" aria-label="Rundgang">
+        <a class="pager-link pager-link--prev" href="nachhaltigkeit.html" rel="prev" data-pager="prev"><span>← Zurück</span><strong>Nachhaltigkeit</strong></a>
+        <span class="pager-count">4 / 5<small>Pfeiltasten ← →</small></span>
+        <a class="pager-link pager-link--next" href="quellen.html" rel="next" data-pager="next"><span>Weiter →</span><strong>Quellen</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-about"><strong>E-Auto-Reise</strong> · Ein Schülerprojekt über die globalen Wertschöpfungsketten hinter der E-Auto-Batterie.</p>
+      <p class="footer-meta">
+        © <span id="year">2026</span> · Didaktisches Projekt, keine Kaufberatung · Datenstand 2024/25 · Angaben gerundet · Texte unter CC BY 4.0 ·
+        <a href="https://github.com/cokonut19/E-Auto-Reise" target="_blank" rel="noopener">GitHub ↗</a> ·
+        <a href="https://globe.gl" target="_blank" rel="noopener">globe.gl ↗</a>
+      </p>
+    </div>
+  </footer>
+
+  <nav class="tabbar" aria-label="Seiten">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.3 3.8 5.1 3.8 8.5s-1.2 6.2-3.8 8.5c-2.6-2.3-3.8-5.1-3.8-8.5s1.2-6.2 3.8-8.5Z"/></svg><span>Globus</span></a>
+    <a href="akku.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="15.5" height="10" rx="2.2"/><path d="M21 10.5v3"/><path d="M7 10v4M10.5 10v4"/></svg><span>Akku</span></a>
+    <a href="nachhaltigkeit.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C12 4 5 8 5 15c0 2 .8 3.7 2.2 5C9 18 12.5 15 20 13.5V4Z"/><path d="M7 20c1-4 4-7 8-9"/></svg><span>Nachhaltig</span></a>
+    <a href="recycling.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6"/><path d="M4 12a8 8 0 0 1 13.7-5.6"/><path d="M18 3v3.6h-3.6M6 21v-3.6h3.6"/></svg><span>Recycling</span></a>
+    <a href="quellen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5v-15Z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"/><path d="M9 7.5h6M9 11h4"/></svg><span>Quellen</span></a>
+  </nav>
+
+  <noscript>
+    <div class="noscript-banner">
+      JavaScript ist deaktiviert. Die Inhalte sind lesbar, der interaktive Globus und die Filter benötigen jedoch JavaScript.
+    </div>
+  </noscript>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

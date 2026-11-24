@@ -22,7 +22,7 @@ Danach im Browser öffnen: **http://localhost:5500**
 
 ## Projektstruktur
 
-Die Website besteht aus vier Seiten, die man der Reihe nach durchklicken kann
+Die Website besteht aus fünf Seiten, die man der Reihe nach durchklicken kann
 (Weiter-Button oder Pfeiltasten ← →, z. B. für eine Präsentation):
 
 ```
@@ -30,7 +30,8 @@ Die Website besteht aus vier Seiten, die man der Reihe nach durchklicken kann
 ├── index.html                  # 1 · Start: 3D-Globus + Liniennetz der Rohstoffe
 ├── akku.html                   # 2 · Bestandteile der Batterie
 ├── nachhaltigkeit.html         # 3 · Nachhaltigkeits-Check
-├── quellen.html                # 4 · Quellen & Methodik
+├── recycling.html              # 4 · Recycling: Kreislauf, Second Life, EU-Quoten
+├── quellen.html                # 5 · Quellen & Methodik
 ├── css/
 │   └── styles.css              # Designsystem, Layout, Responsive & Animationen
 ├── js/
@@ -50,7 +51,7 @@ Die Globus-Texturen liegen lokal in `assets/`.
 
 ## Funktionen
 
-- **4 Seiten statt einer langen Scroll-Seite**: Desktop-Navigation oben, auf dem Handy eine Tab-Leiste unten
+- **5 Seiten statt einer langen Scroll-Seite**: Desktop-Navigation oben, auf dem Handy eine Tab-Leiste unten
 - **Rundgang** mit Zurück/Weiter-Buttons und Pfeiltasten-Steuerung
 - **Wenig Text**: Kernaussage + Zahl sichtbar, Details über „Mehr erfahren“ aufklappbar
 - **3D-Globus** mit Nacht-Textur, animierten Lieferbögen, Filter nach Lithium, Kobalt, Nickel und Graphit
@@ -58,7 +59,8 @@ Die Globus-Texturen liegen lokal in `assets/`.
 - **Liniennetzplan** der Routen von den Minen zur Verarbeitung in China
 - **Zellquerschnitt**, der beim Überfahren der Bestandteile die passende Schicht hervorhebt
 - **Nachhaltigkeits-Check** zu Ökologie, Sozialem und Ökonomie
-- **Quellenseite** mit USGS-, IEA-, EU- und OECD-Links
+- **Recycling-Seite** mit Kreislauf-Grafik, Kennzahlen (Second Life, Schwarzmasse, Kapazitäten) und den EU-Quoten der Batterieverordnung
+- **Quellenseite** mit USGS-, IEA-, EU- und OECD-Links sowie eigenem Block für die Recycling-Quellen (EU, UBA, Fraunhofer ISI/FFB, JRC, IEA)
 - Dark-Mode-Design, Tastaturbedienung, Reduced-Motion-Unterstützung und barrierefreie Datentabelle
 - Alte Links wie `index.html#quellen` leiten automatisch auf die neue Seite weiter
 
